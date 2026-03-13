@@ -3,13 +3,13 @@ import classNames from 'classnames';
 
 interface Props {
   newTitle: string;
-  setNewTitle: (v: string) => void;
+  setNewTitle: (value: string) => void;
   onSubmit: (e: React.FormEvent) => void;
   isAdding: boolean;
   todosCount: number;
   activeCount: number;
-  onToggleAll: () => void;
   inputRef: React.RefObject<HTMLInputElement>;
+  onToggleAll: () => void;
 }
 
 export const Header: React.FC<Props> = ({
@@ -19,18 +19,20 @@ export const Header: React.FC<Props> = ({
   isAdding,
   todosCount,
   activeCount,
-  onToggleAll,
   inputRef,
+  onToggleAll,
 }) => (
   <header className="todoapp__header">
+    <h1 className="todoapp__title">todos</h1>
+
     {todosCount > 0 && (
       <button
         type="button"
         className={classNames('todoapp__toggle-all', {
           active: activeCount === 0,
         })}
-        data-cy="ToggleAllButton"
         onClick={onToggleAll}
+        data-cy="ToggleAllButton"
       />
     )}
 

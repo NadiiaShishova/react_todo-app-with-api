@@ -12,7 +12,7 @@ export const ErrorNotification: React.FC<Props> = ({ error, onClose }) => (
     data-cy="ErrorNotification"
     className={classNames(
       'notification is-danger is-light has-text-weight-normal',
-      { hidden: !error }, // Помилка видима лише якщо текст не порожній
+      { hidden: !error },
     )}
   >
     <button
